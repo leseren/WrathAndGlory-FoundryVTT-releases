@@ -1,15 +1,41 @@
-# Wrath & Glory — homebrew releases (public)
+# Wrath & Glory — homebrew-сборка (RU)
 
-This repository contains **built packages only** (`system.json` + `wrath-and-glory.zip`) for Foundry VTT.
+Здесь только **готовые файлы** для Foundry VTT: `system.json` и `wrath-and-glory.zip`.  
+Исходный код системы — в **приватном** репозитории; сюда попадают только релизы.
 
-Source code is private. Do not commit source here — releases are published by GitHub Actions from the private fork.
+## Установка в Foundry (по ссылке)
 
-## Install in Foundry
-
-**Manifest URL:**
+1. Закройте миры и останьтесь на экране **Setup** (настройка Foundry).
+2. Слева откройте **Game Systems** (игровые системы).
+3. Нажмите **Install System** (установить систему) внизу.
+4. В поле **Manifest URL** вставьте **целиком** эту ссылку:
 
 ```text
 https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/system.json
 ```
 
-Requires **Foundry v14**, module **warhammer-lib**, and official **wng-*** content modules.
+5. Нажмите **Install** (установить) и дождитесь окончания загрузки.
+6. Создайте мир или откройте существующий с системой **Warhammer 40,000: Wrath & Glory**.
+7. В настройках мира включите модуль **[warhammer-lib](https://foundryvtt.com/packages/warhammer-lib)** и нужные официальные **wng-*** (Core и т.д.).
+8. Для русского интерфейса: язык клиента / мира — **Русский**.
+
+**Не** устанавливайте и **не** обновляйте официальную систему Wrath & Glory из каталога Foundry (moo-man) поверх этой сборки — иначе пропадёт русификация.
+
+## Обновление
+
+1. Экран **Setup** → **Game Systems**.
+2. Найдите **wrath-and-glory** → кнопка **Update** (обновить), если она есть.
+3. Либо снова **Install System** с той же ссылкой manifest (Foundry подтянет новую версию из последнего релиза здесь).
+
+Новые релизы появляются после сборки в приватном репозитории (ветка `homebrew-8.1.2`).
+
+## Проверка ссылки
+
+Откройте manifest в браузере — должен открыться JSON с полями `id`, `version`, `download`.  
+Если страница не открывается, проверьте, что на вкладке **Releases** есть последний релиз с файлами `system.json` и `wrath-and-glory.zip`.
+
+## Требования
+
+- Foundry VTT **v14**
+- Модуль **warhammer-lib**
+- Официальные модули контента **wng-*** (покупаются / устанавливаются отдельно)
