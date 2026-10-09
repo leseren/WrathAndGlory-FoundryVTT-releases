@@ -27,13 +27,6 @@ https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/dow
 2. Найдите **wrath-and-glory** → кнопка **Update** (обновить), если она есть.
 3. Либо снова **Install System** с той же ссылкой manifest (Foundry подтянет новую версию из последнего релиза здесь).
 
-Новые релизы появляются после сборки в приватном репозитории (ветка `homebrew-8.1.2`).
-
-## Проверка ссылки
-
-Откройте manifest в браузере — должен открыться JSON с полями `id`, `version`, `download`.  
-Если страница не открывается, проверьте, что на вкладке **Releases** есть последний релиз с файлами `system.json` и `wrath-and-glory.zip`.
-
 ## Требования
 
 - Foundry VTT **v14**
