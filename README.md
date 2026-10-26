@@ -16,7 +16,7 @@ https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/dow
 
 5. Нажмите **Install** (установить) и дождитесь окончания загрузки.
 6. Создайте мир или откройте существующий с системой **Warhammer 40,000: Wrath & Glory**.
-7. В настройках мира включите модуль **[warhammer-lib](https://foundryvtt.com/packages/warhammer-lib)** и нужные официальные **wng-*** (Core и т.д.).
+7. В настройках мира включите модули **[warhammer-lib](https://foundryvtt.com/packages/warhammer-lib)**, **[libWrapper](https://foundryvtt.com/packages/lib-wrapper)**, **[Babele](https://foundryvtt.com/packages/babele)**, **[Russian Translation | Русский перевод](https://foundryvtt.com/packages/ru-ru)** и нужные официальные **wng-*** (Core и т.д.).
 8. Для русского интерфейса: язык клиента / мира — **Русский**.
 
 **Не** устанавливайте и **не** обновляйте официальную систему Wrath & Glory из каталога Foundry (moo-man) поверх этой сборки — иначе пропадёт русификация.
@@ -29,13 +29,11 @@ https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/dow
 
 Новые релизы появляются после сборки в приватном репозитории (ветка `homebrew-8.1.2`).
 
-## Проверка ссылки
-
-Откройте manifest в браузере — должен открыться JSON с полями `id`, `version`, `download`.  
-Если страница не открывается, проверьте, что на вкладке **Releases** есть последний релиз с файлами `system.json` и `wrath-and-glory.zip`.
-
 ## Требования
 
 - Foundry VTT **v14**
-- Модуль **warhammer-lib**
+- Модуль **[warhammer-lib](https://foundryvtt.com/packages/warhammer-lib)** (обязателен для системы)
+- Модуль **[libWrapper](https://foundryvtt.com/packages/lib-wrapper)** (совместимость с модулями и патчами интерфейса)
+- Модуль **[Babele](https://foundryvtt.com/packages/babele)** — перевод компендиумов (в сборке уже лежат файлы `babele/ru/`; без Babele предметы и журналы останутся на английском)
+- Модуль **[Russian Translation | Русский перевод](https://foundryvtt.com/packages/ru-ru)** (`ru-ru`) — русский интерфейс Foundry и системные строки W&G из пакета `lang`
 - Официальные модули контента **wng-*** (покупаются / устанавливаются отдельно)
