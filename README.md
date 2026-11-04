@@ -1,6 +1,6 @@
 # Wrath & Glory — homebrew-сборка (RU)
 
-Здесь только **готовые файлы** для Foundry VTT: `system.json` и `wrath-and-glory.zip`.  
+Здесь только **готовые файлы** для Foundry VTT: система (`system.json`, `wrath-and-glory.zip`) и модуль домашних правил (`module.json`, `wng-homebrew.zip`).  
 Исходный код системы — в **приватном** репозитории; сюда попадают только релизы.
 
 ## Установка в Foundry (по ссылке)
@@ -21,6 +21,19 @@ https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/dow
 
 **Не** устанавливайте и **не** обновляйте официальную систему Wrath & Glory из каталога Foundry (moo-man) поверх этой сборки — иначе пропадёт русификация.
 
+## Модуль домашних правил (`wng-homebrew`) — по ссылке
+
+Активирует домашние правила, дополнительные предметы и архетипы, а также встроенный календарь системы Гилеад.
+
+1. На экране **Setup** откройте **Add-on Modules** → **Install Module**.
+2. Вставьте в **Manifest URL** ссылку:
+
+```text
+https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/module.json
+```
+
+3. Нажмите **Install**, затем включите модуль **Домашние правила** (`wng-homebrew`) в настройках мира (**Manage Modules**).
+
 ## Обновление
 
 1. Экран **Setup** → **Game Systems**.
@@ -37,3 +50,7 @@ https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/dow
 - Модуль **[Babele](https://foundryvtt.com/packages/babele)** — перевод компендиумов (в сборке уже лежат файлы `babele/ru/`; без Babele предметы и журналы останутся на английском)
 - Модуль **[Russian Translation | Русский перевод](https://foundryvtt.com/packages/ru-ru)** (`ru-ru`) — русский интерфейс Foundry и системные строки W&G из пакета `lang`
 - Официальные модули контента **wng-*** (покупаются / устанавливаются отдельно)
+
+## Сторонние компоненты и благодарности
+
+- Встроенный календарь системы Гилеад (активируется при включении модуля `wng-homebrew`) основан на модуле **[GG Calendar](https://github.com/GegesVTT/gg-calendar)** за авторством **Geges** (распространяется по лицензии [MIT](https://opensource.org/licenses/MIT), Copyright © Geges).
