@@ -21,9 +21,9 @@ https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/dow
 
 **Не** устанавливайте и **не** обновляйте официальную систему Wrath & Glory из каталога Foundry (moo-man) поверх этой сборки — иначе пропадёт русификация.
 
-## Модуль домашних правил (`wng-homebrew`) — по ссылке
+## Модуль «Дополнительно» (`wng-homebrew`) — по ссылке
 
-Активирует домашние правила, дополнительные предметы и архетипы, а также встроенный календарь системы Гилеад.
+Предоставляет дополнительный контент (новые предметы, снаряжение, архетипы), а также расширенные возможности (календарь системы Гилеад, Group Sheet и др.).
 
 1. На экране **Setup** откройте **Add-on Modules** → **Install Module**.
 2. Вставьте в **Manifest URL** ссылку:
@@ -32,7 +32,7 @@ https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/dow
 https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/module.json
 ```
 
-3. Нажмите **Install**, затем включите модуль **Домашние правила** (`wng-homebrew`) в настройках мира (**Manage Modules**).
+3. Нажмите **Install**, затем включите модуль **Дополнительно** (`wng-homebrew`) в настройках мира (**Manage Modules**).
 
 ## Обновление
 
