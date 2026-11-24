@@ -1,56 +1,145 @@
-# Wrath & Glory — homebrew-сборка (RU)
+# Warhammer 40,000: Wrath & Glory — Homebrew-сборка (RU) для Foundry VTT
 
-Здесь только **готовые файлы** для Foundry VTT: система (`system.json`, `wrath-and-glory.zip`) и модуль домашних правил (`module.json`, `wng-homebrew.zip`).  
-Исходный код системы — в **приватном** репозитории; сюда попадают только релизы.
+[![Latest Release](https://img.shields.io/github/v/release/leseren/WrathAndGlory-FoundryVTT-releases?label=%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D1%80%D0%B5%D0%BB%D0%B8%D0%B7&color=b91c1c)](https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest)
+[![Foundry VTT v14](https://img.shields.io/badge/Foundry%20VTT-v14-orange)](https://foundryvtt.com/)
+[![warhammer-lib](https://img.shields.io/badge/warhammer--lib-%E2%89%A5%203.3.4-blue)](https://foundryvtt.com/packages/warhammer-lib)
+[![Язык: Русский](https://img.shields.io/badge/%D0%AF%D0%B7%D1%8B%D0%BA-%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9%20(RU)-2e7d32)](#%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D0%B4%D1%91%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8-babele)
 
-## Установка в Foundry (по ссылке)
+Публичный репозиторий релизов неофициальной русскоязычной сборки **Warhammer 40,000: Wrath & Glory** и сопутствующих модулей для **Foundry VTT v14**.  
+Здесь публикуются только готовые пакеты (манифесты `.json` и архивы `.zip`) для установки и автоматического обновления в Foundry; исходный код хранится в приватном репозитории.
 
-1. Закройте миры и останьтесь на экране **Setup** (настройка Foundry).
-2. Слева откройте **Game Systems** (игровые системы).
-3. Нажмите **Install System** (установить систему) внизу.
-4. В поле **Manifest URL** вставьте **целиком** эту ссылку:
+---
 
-```text
-https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/system.json
-```
+## Быстрый старт: все Manifest URL
 
-5. Нажмите **Install** (установить) и дождитесь окончания загрузки.
-6. Создайте мир или откройте существующий с системой **Warhammer 40,000: Wrath & Glory**.
-7. В настройках мира включите модули **[warhammer-lib](https://foundryvtt.com/packages/warhammer-lib)**, **[libWrapper](https://foundryvtt.com/packages/lib-wrapper)**, **[Babele](https://foundryvtt.com/packages/babele)**, **[Russian Translation | Русский перевод](https://foundryvtt.com/packages/ru-ru)** и нужные официальные **wng-*** (Core и т.д.).
-8. Для русского интерфейса: язык клиента / мира — **Русский**.
+Скопируйте нужную ссылку и вставьте её в **Setup → Install System** (для системы) или **Setup → Add-on Modules → Install Module** (для модулей):
 
-**Не** устанавливайте и **не** обновляйте официальную систему Wrath & Glory из каталога Foundry (moo-man) поверх этой сборки — иначе пропадёт русификация.
+| Пакет | Тип | Рекомендация | Manifest URL |
+|-------|-----|--------------|--------------|
+| **Wrath & Glory (RU)** (`wrath-and-glory`) | Система | Обязательно | `https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/system.json` |
+| **Дополнительно** (`wng-homebrew`) | Модуль | Рекомендуется | `https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/module.json` |
+| **Wrath & Glory HUD** (`wng-hud`) | Модуль | Рекомендуется | `https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/wng-hud.json` |
+| **Simple Quest — Русский перевод** (`simple-quest-ru`) | Модуль | Опционально* | `https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/simple-quest-ru.json` |
 
-## Модуль «Дополнительно» (`wng-homebrew`) — по ссылке
+<sub>* Требует отдельно купленный и установленный оригинальный модуль **Simple Quest** (сам Simple Quest в релиз не входит).</sub>
 
-Предоставляет дополнительный контент (новые предметы, снаряжение, архетипы), а также расширенные возможности (календарь системы Гилеад, Group Sheet и др.).
+---
 
-1. На экране **Setup** откройте **Add-on Modules** → **Install Module**.
-2. Вставьте в **Manifest URL** ссылку:
+## Что входит в сборку
 
-```text
-https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/module.json
-```
+### 1. Система `wrath-and-glory` (RU + Homebrew)
+- **Полная русская локализация**: системный интерфейс (`lang/ru.json`) и встроенные Babele-переводы компендиумов (`babele/ru/`) с единой терминологией (*Уровень* = Rank, *Ранг* = Tier).
+- **Расширенная боевая автоматизация**:
+  - Домашние базовые СЛ атак (`4` дальний бой / `3` метательное, взрыв, точечная цель / `2` ближний бой), предельная дистанция, схватка в ближнем бою и пистолеты в ближнем бою.
+  - Режимы залпа (Автоматический огонь, Веерный огонь, Подавляющий огонь, Полное действие), мульти-атаки, Прицельный выстрел, Разоружение, уровни укрытий, Тяжёлое оружие / Упор, Натиск, Тотальная оборона, Внезапная атака и кастомная система боеприпасов и перезарядки.
+  - Единый евклидов расчёт дистанций с точностью `0.1 м` на всех 6 типах сеток Foundry v14 (квадраты, гексы и без сетки) — по центрам токенов для стрельбы/аур/психосил/шаблонов и по габариту (`footprint`) для ближнего боя и контакта `≤ 1 м`.
+- **Медицина, Травмы и Увечья**:
+  - 1-часовой таймер **Необработанных ран** → автоматическое превращение в **Травму** со снижением максимума Ран.
+  - Восстановление Травм на Отдыхе (`Выносливость СЛ 3`) с поддержкой ухода союзника (`Медицина СЛ 3`), лечение Ран/Шока/Состояний, хирургия излечимых Увечий (`Медицина СЛ 5`, `+1 СЛ` на себе) и автоматизация медицинских талантов.
+- **Полная автоматизация механик**: психосилы, таланты, способности архетипов, аугметика, мутации, состояния, техника и эффекты окружения с поддержкой двуязычного поиска (EN + RU).
 
-3. Нажмите **Install**, затем включите модуль **Дополнительно** (`wng-homebrew`) в настройках мира (**Manage Modules**).
+### 2. Модуль «Дополнительно» (`wng-homebrew`)
+Дополнительный контент и подключаемые функции для мира:
+- **Компендиум на 26 предметов**: приборы ночного видения и фонари (ручной, подствольный), переработанные медицинские предметы (Стимм, Набор хирурга, Набор для выживания), Аугметическая реконструкция, каталог из **14 типов патронов** (пистолетные, винтовочные, тяжёлые, дробовые), 2 новых архетипа (**Изгой-псайкер** / *Outcast Psyker* и **Контрабандист** / *Smuggler*) с их способностями, а также талант **Насыщенный радиацией** (*Rad-Saturated*).
+- **Лист группы** (*Group Sheet*) для отряда и **встроенный календарь системы Гилеад** с трекингом времени.
+- **Динамические правки описаний и правил** для `Stimm`, `Ammo Drum`, `Chirurgeon's Tools`, `Survival Kit`, `Rad-Saturated`, `Techno-animist`, `Born Survivor` и `Death Or Glory!`.
 
-## Обновление
+### 3. Модуль `Wrath & Glory HUD` (`wng-hud`)
+Современный тактический HUD для Foundry VTT v14, полностью использующий API системы без дублирования формул:
+- **Persistent HUD** — компактная панель активного актёра в левом нижнем углу под списком игроков: портрет, быстрые правки Ран и Шока (`+N` / `-N` / `=N`), живой таймер Необработанных ран, бейджи Травм и Увечий, управление Защитой/Укрытием/Стойками, Стойкость и Броня, быстрые броски, счётчики Гнева/Веры/Порчи/Погибели/Толпы, сворачиваемая полоса Активных эффектов и Поддержания психосил, панель отряда для ГМ и пакетное управление выделенной группой токенов (ввод/вывод из боя, скрытие/показ).
+- **5 выдвижных боковых панелей**: *Бой*, *Навыки и Атрибуты*, *Психосилы*, *Таланты и Способности*, *Снаряжение и Медицина*.
+- **Хотбар шорткатов актёра** — 3 вкладки × 10 слотов с индивидуальным сохранением для каждого актёра (оружие, штык, психосилы с переключением Поддержания по ПКМ, стиммы, навыки, атрибуты, стойки/укрытия, Медицина/Перегруппировка/Отдых, макросы Foundry), перетаскивание мышкой (drag-and-drop), автозаполнение, блокировка слотов и переключение со штатным хотбаром (или его полное отключение).
+- **Hover Tooltip на токенах** — точная дистанция в метрах (квадраты и гексы), зона дистанции экипированного стрелкового оружия, опциональная линия визирования, строгий **анти-спойлер** для врагов (ГМ / Владелец / Наблюдатель / Враг) и автоматическое локальное скрытие штатных шкал токенов на сцене (без изменения данных мира).
+- **Дополнительные элементы**: компактная карточка описания предмета по **ПКМ** (с отправкой в чат), плавающий **Token HUD** вокруг токена на сцене (`exploded` / `left` / `right`) и опциональный **верхний трекер боя** (включается в настройках клиента).
+- **Персональное отключение с нулевым оверхедом**: любой игрок со слабым ПК может одной клиентской галочкой **«Включить модуль W&G HUD»** полностью выключить HUD (или отдельные его элементы) только у себя — отключённые компоненты не регистрируют хуки, не грузят шаблоны и стили и возвращают штатный интерфейс Foundry.
 
-1. Экран **Setup** → **Game Systems**.
-2. Найдите **wrath-and-glory** → кнопка **Update** (обновить), если она есть.
-3. Либо снова **Install System** с той же ссылкой manifest (Foundry подтянет новую версию из последнего релиза здесь).
+### 4. Модуль `Simple Quest — Русский перевод` (`simple-quest-ru`)
+- Независимый сторонний аддон русской локализации и правки контрастности текста для платного модуля **Simple Quest** (v5.1.2+, Foundry VTT v14): переводит интерфейс, типы страниц журнала, статусы заданий, блоки, доску расследований, хронологию и настройки.
+- **Важно:** сам модуль **Simple Quest** (автор: TheRipper93) **не распространяется** в этом репозитории и должен быть приобретён и установлен отдельно.
 
-Новые релизы появляются после сборки в приватном репозитории (ветка `homebrew-8.1.2`).
+---
+
+## Переведённые книги (Babele)
+
+В пакет системы уже встроены словари `babele/ru/` для следующих официальных модулей Cubicle 7 (сами модули контента приобретаются и устанавливаются отдельно):
+
+- **`wng-core`** — Основная книга правил (*Core Rulebook*): предметы, актёры, журналы, таблицы.
+- **`wng-forsaken`** — Забытая Система (*Forsaken System*): предметы, таблицы.
+- **`wng-cos`** — Церковь Стали (*Church of Steel*): предметы, техника/актёры, таблицы.
+- **`wng-records1`** — Секретные Архивы I (*Redacted Records I*): предметы, актёры, таблицы.
+- **`wng-records2`** — Секретные Архивы II (*Redacted Records II*): предметы, актёры, таблицы.
+- **`wng-homebrew`** — Модуль «Дополнительно»: предметы и структура папок.
+
+---
 
 ## Требования
 
-- Foundry VTT **v14**
-- Модуль **[warhammer-lib](https://foundryvtt.com/packages/warhammer-lib)** (обязателен для системы)
-- Модуль **[libWrapper](https://foundryvtt.com/packages/lib-wrapper)** (совместимость с модулями и патчами интерфейса)
-- Модуль **[Babele](https://foundryvtt.com/packages/babele)** — перевод компендиумов (в сборке уже лежат файлы `babele/ru/`; без Babele предметы и журналы останутся на английском)
-- Модуль **[Russian Translation | Русский перевод](https://foundryvtt.com/packages/ru-ru)** (`ru-ru`) — русский интерфейс Foundry и системные строки W&G из пакета `lang`
-- Официальные модули контента **wng-*** (покупаются / устанавливаются отдельно)
+Перед запуском мира установите и включите в Foundry VTT:
+
+- **Foundry VTT v14**
+- **[warhammer-lib](https://foundryvtt.com/packages/warhammer-lib)** (`>= 3.3.4`) — **обязательный** базовый модуль для всех систем Warhammer
+- **[libWrapper](https://foundryvtt.com/packages/lib-wrapper)** — рекомендуется (совместимость модулей и патчей `wng-hud`)
+- **[Babele](https://foundryvtt.com/packages/babele)** — обязателен для отображения русского перевода компендиумов (без него книги останутся на английском)
+- **[Russian Translation | Русский перевод](https://foundryvtt.com/packages/ru-ru)** (`ru-ru`) — русский интерфейс ядра Foundry
+- Официальные модули контента **wng-\*** (`wng-core` и другие по необходимости)
+
+---
+
+## Пошаговая установка в Foundry VTT
+
+### Шаг 1 — Установка системы `wrath-and-glory`
+1. Закройте активный мир и перейдите на экран **Setup**.
+2. Откройте вкладку **Game Systems** → нажмите **Install System**.
+3. Вставьте в поле **Manifest URL**:
+   ```text
+   https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/system.json
+   ```
+4. Нажмите **Install** и дождитесь завершения загрузки.
+
+> **Важно:** **Не** устанавливайте и **не** обновляйте официальную систему Wrath & Glory от `moo-man` из каталога Foundry поверх этой сборки — иначе русификация и домашние механики будут перезаписаны.
+
+### Шаг 2 — Установка рекомендуемых модулей (`wng-homebrew` и `wng-hud`)
+1. На экране **Setup** откройте **Add-on Modules** → **Install Module**.
+2. Установите модуль **«Дополнительно»** (`wng-homebrew`) по ссылке:
+   ```text
+   https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/module.json
+   ```
+3. Установите тактический HUD (**Wrath & Glory HUD**, `wng-hud`) по ссылке:
+   ```text
+   https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/wng-hud.json
+   ```
+4. *(Опционально)* Если у вас уже установлен купленный модуль **Simple Quest**, установите его русификацию (`simple-quest-ru`) по ссылке:
+   ```text
+   https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest/download/simple-quest-ru.json
+   ```
+
+### Шаг 3 — Настройка мира
+1. Создайте или откройте мир с системой **Warhammer 40,000: Wrath & Glory**.
+2. Откройте **Настройки → Управление модулями (Manage Modules)** и включите:
+   - `warhammer-lib`, `libWrapper`, `Babele`, `Russian Translation (ru-ru)`
+   - официальные пакеты `wng-core` и другие `wng-*`
+   - `Дополнительно` (`wng-homebrew`) и `Wrath & Glory HUD` (`wng-hud`)
+3. В настройках клиента/мира выберите язык **Русский** и перезагрузите страницу (**F5**).
+
+---
+
+## Обновление
+
+### Автоматически в Foundry (рекомендуется)
+1. На экране **Setup** откройте **Game Systems** → найдите **Warhammer 40,000: Wrath & Glory** → нажмите **Update** (или **Check for Updates**).
+2. Аналогично в **Add-on Modules** обновите **Дополнительно** (`wng-homebrew`), **Wrath & Glory HUD** (`wng-hud`) и при наличии **Simple Quest — Русский перевод** (`simple-quest-ru`).
+3. Если кнопка **Update** не появляется — просто повторите **Install System / Install Module** с той же ссылкой Manifest URL.
+
+### Вручную через ZIP
+1. Откройте [страницу последнего релиза](https://github.com/leseren/WrathAndGlory-FoundryVTT-releases/releases/latest) и скачайте нужный архив (`wrath-and-glory.zip`, `wng-homebrew.zip`, `wng-hud.zip` или `simple-quest-ru.zip`).
+2. Закройте Foundry и распакуйте содержимое в соответствующую папку:
+   - Система: `%LocalAppData%\FoundryVTT\Data\systems\wrath-and-glory\`
+   - Модули: `%LocalAppData%\FoundryVTT\Data\modules\<id-модуля>\`
+
+---
 
 ## Сторонние компоненты и благодарности
 
-- Встроенный календарь системы Гилеад (активируется при включении модуля `wng-homebrew`) основан на модуле **[GG Calendar](https://github.com/GegesVTT/gg-calendar)** за авторством **Geges** (распространяется по лицензии [MIT](https://opensource.org/licenses/MIT), Copyright © Geges).
+- Базовая система **Wrath & Glory** для Foundry VTT: **Moo Man**, **Perfectro**, **Thul** и **Cubicle 7** (лицензия [GNU GPL v3.0](https://choosealicense.com/licenses/gpl-3.0/)).
+- Встроенный календарь системы Гилеад (активируется модулем `wng-homebrew`) основан на модуле **[GG Calendar](https://github.com/GegesVTT/gg-calendar)** за авторством **Geges** (лицензия [MIT](https://opensource.org/licenses/MIT), Copyright © Geges).
+- **Simple Quest** (для которого предназначен опциональный модуль перевода `simple-quest-ru`) создан **TheRipper93** и не входит в данный репозиторий.
